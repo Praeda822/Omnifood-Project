@@ -56,6 +56,7 @@
 	margin-top: 6.9rem;
 	display: grid;
 	height: 100%;
+	width: 100%;
 	place-items: center;
 	/* background: #8ac832; */
 }
@@ -75,8 +76,16 @@
 	border-radius: 0.3rem;
 	padding: 2.5rem;
 	/* width: calc(100% - 5rem); */
-	width: calc(33% - 1rem);
+	width: calc(25% - 1rem);
 	box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: #909399;
+	line-height: 2.4rem;
+	padding-bottom: 1.2rem;
 }
 
 .testimonial .testimonial-box i.fa-quote-left {
@@ -308,22 +317,281 @@
 	font-size: 1.8rem;
 }
 
-.list {
+.section-pricing {
+	padding: 9.6rem 0;
+}
+
+.pricing-plan {
+	border-radius: 1.1rem;
+	width: 75%;
+	box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.pricing-plan--starter {
+	justify-self: end;
+	border: 0.2rem solid #f3faeb;
+	padding: 4.6rem;
+}
+
+.pricing-plan--complete {
+	background-color: #f3faeb;
+	padding: 4.8rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.pricing-plan--complete::after {
+	content: "Best Value";
+	position: absolute;
+	top: 6%;
+	right: -18%;
+
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #2d2f31;
+	background-color: #ffd43b;
+	padding: 0.8rem 8rem;
+	transform: rotate(45deg);
+}
+
+.plan-header {
+	text-align: center;
+	margin-bottom: 4.8rem;
+}
+
+.plan-name {
+	color: #8ac832;
+	font-size: 2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.75;
+	margin-bottom: 3rem;
+}
+
+.plan-price {
+	font-size: 6rem;
+	font-weight: 600;
+	color: #2d2f31;
+	margin-bottom: 2.5rem;
+}
+
+.plan-price span {
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin-right: 0.8rem;
+}
+.plan-text {
+	font-size: 1.8rem;
+	line-height: 1.6;
+	margin-bottom: 3.2rem;
+	color: #909399;
+}
+
+.plan-sign-up {
+	text-align: center;
+	margin-top: 4.8rem;
+}
+
+.plan-details {
+	font-size: 1.6rem;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.feature-icon {
+	color: #7cb42d;
+	height: 3.2rem;
+	width: 3.2rem;
+	background-color: #f3faeb;
+	margin-bottom: 3.6rem;
+	padding: 1.6rem;
+	border-radius: 50%;
+}
+
+.feature-title {
+	font-size: 2.4rem;
+	color: #2d2f31;
+	font-weight: 700;
+	margin-bottom: 1.6rem;
+}
+
+.feature-text {
+	font-size: 1.8rem;
+	font-weight: 300;
+	line-height: 1.6;
+	color: #2d2f31;
+}
+
+/* CTA SECTION */
+
+.section-cta {
+	padding: 4.8rem 0 12.8rem;
+}
+
+.cta {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	background-color: #8ac832;
+	box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.015);
+	border-radius: 1.1rem;
+	background-image: linear-gradient(to right bottom, #c5e499, #8ac832);
+	overflow: hidden;
+}
+
+.cta-text-box {
+	padding: 4.8rem 6.5rem 6.5rem 6.5rem;
+	color: #272e1f;
+}
+
+.cta .heading-secondary {
+	color: inherit;
+	margin-bottom: 4.8rem;
+}
+
+.cta-text {
+	font-size: 1.8rem;
+	line-height: 1.8;
+	margin-bottom: 4.8rem;
+}
+
+.cta-img-box {
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(150, 207, 69, 0.15),
+			rgba(137, 200, 50, 0.15)
+		),
+		url(../img/eating.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.cta-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 3.2rem;
+	row-gap: 2.4rem;
+}
+
+.cta-form label {
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 500;
+	margin-bottom: 1.2rem;
+}
+
+/*group input and select together for design consistency*/
+
+.cta-form input,
+.cta-form select {
+	width: 100%;
+	padding: 1.2rem;
+	font-size: 1.8rem;
+	/*declare inherit to input, button, select, so that it inherits the font-family AND color from the body element*/
+	font-family: inherit;
+	color: inherit;
+	/*always remove the default border from inputs*/
+	border: none;
+	background-color: #f3faeb;
+	/*gives it that off-shade of green*/
+	border-radius: 0.9rem;
+	box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.1);
+	/* 0 for horzontal, 1.2 for vertical, 2.4 for blur, 0.1 for spread*/
+	/*makes the input field sort of pop-off the page a bit*/
+}
+
+.cta-form input::placeholder {
+	color: #b7b7b7;
+}
+
+/* EXTREMELY IMPORTANT TO DECLARE FOCUS STATES FOR ACCESSIBILITY */
+.cta *:focus {
+	outline: none;
+	box-shadow: 0 0 0 0.8rem rgba(243, 250, 235, 0.5);
+}
+
+/* ==================================
+	FOOTER
+	==================================
+*/
+
+/*Removing the padding from the .footer container fixes the logo problem. The logo is now centered. WTF lol*/
+
+/* I am dumb and forgot to hyphen the footer-logo. Diiiiickhead. */
+.footer {
+	padding: 12.8rem 0;
+	border-top: 0.1rem solid #f1f1f1;
+}
+
+.grid--footer {
+	grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-logo {
+	display: block;
+	margin-bottom: 4rem;
+}
+
+.social-links {
+	list-style: none;
+	display: flex;
+	gap: 2.4rem;
+}
+
+/* standard height of many icons is 24px, so we can use that as a base for our height and width */
+.social-icon {
+	height: 2.4rem;
+	width: 2.4rem;
+}
+
+.copyright {
+	font-size: 1.4rem;
+	color: #909399;
+	line-height: 1.6;
+	margin-top: auto;
+}
+
+.footer-heading {
+	font-size: 2rem;
+	font-weight: 500;
+	margin-bottom: 4rem;
+	color: #2b2c2e;
+}
+
+.contacts {
+	font-style: normal;
+	font-size: 1.4rem;
+	line-height: 1.6;
+}
+
+.contacts p:first-child {
+	margin-bottom: 2.4rem;
+	color: #909399;
+	font-size: 1.45rem;
+}
+
+.footer-nav {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 2.4rem;
 }
 
-.list-item {
-	font-size: 1.8rem;
-	display: flex;
-	align-items: center;
-	gap: 1.6rem;
+.footer-link:link,
+.footer-link:visited {
+	text-decoration: none;
+	font-size: 1.6rem;
+	color: #909399;
+	transition: all 300ms;
 }
 
-.list-icon {
-	width: 3rem;
-	height: 3rem;
-	color: #8ac832;
+.footer-link:hover,
+.footer-link:active {
+	/* color: #2d2f31; */
+	color: #2b2c2e;
 }

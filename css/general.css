@@ -136,12 +136,13 @@ body {
 	color: #909399;
 	margin-bottom: 3.8rem;
 }
-
+.btn,
 .btn:link,
 .btn:visited {
 	background-color: #8ac832;
 	font-size: 2rem;
 	font-weight: 600;
+	font-family: inherit;
 	color: #fff;
 	padding: 1.2rem 2.4rem;
 	border-radius: 0.4rem;
@@ -164,6 +165,22 @@ body {
 	color: #fff;
 }
 
+.btn--form {
+	border: none;
+	/* background-color: #f3faeb; */
+	/* color: inherit; */
+	background-color: #272e1f;
+	color: #f3faeb;
+	align-self: end;
+	padding: 1.2rem;
+}
+
+.btn--form:hover,
+.btn--full:active {
+	background-color: #1f251a;
+	color: #fff;
+}
+
 .link:link,
 .link:visited {
 	display: inline-block;
@@ -180,10 +197,41 @@ body {
 	border-bottom: 0.1rem solid transparent;
 }
 
+.list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.list-item {
+	font-size: 1.8rem;
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+.list-icon {
+	width: 3rem;
+	height: 3rem;
+	color: #8ac832;
+}
+
+/* removes the outline from tab-targetting buttons */
+/* NEVER JUST LEAVE OUTLINE: NONE */
+*:focus {
+	outline: none;
+	/* outline: 0.4rem dotted #8ac832;
+	outline-offset: 0.6rem; */
+	box-shadow: 0 0 0 0.8rem rgba(137, 200, 50, 0.5);
+}
+
 .hero-img {
 	width: 100%;
 	margin-left: 9.5rem;
 }
+
+/* HELPER CLASSES */
 
 .container {
 	max-width: 120rem;
@@ -193,13 +241,17 @@ body {
 
 .grid {
 	display: grid;
-	column-gap: 6.4;
+	column-gap: 6.4rem;
 	row-gap: 9.6rem;
+}
+
+.grid:not(:last-child) {
+	margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
 	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
+	gap: 6.4rem;
 }
 
 .grid--3-cols {
@@ -209,11 +261,19 @@ body {
 
 .grid--4-cols {
 	grid-template-columns: repeat(4, 1fr);
+	gap: 6.4rem;
+}
+
+.grid--5-cols {
+	grid-template-columns: repeat(5, 1fr);
+	gap: 6.4rem;
 }
 
 .grid--center-v {
 	align-items: center;
 }
+
+/* HELPER SETTINGS */
 
 .margin-right-sm {
 	margin-right: 1.6rem !important;
