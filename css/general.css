@@ -61,6 +61,7 @@ Bold: 700
 html {
 	font-size: 62.5%;
 	line-height: 1.15;
+	overflow-x: hidden;
 }
 
 body {
@@ -69,26 +70,12 @@ body {
 	line-height: 1;
 	color: #333;
 	background: #fff;
+	/*only works if there's nothing absolutely positioned*/
+	overflow-x: hidden;
 }
 
 ::selection {
 	background: rgba(138, 200, 50, 0.5);
-}
-
-.section-hero {
-	background-color: #f3faeb;
-	padding: 8rem 0 9.6rem 0;
-	height: 100%;
-}
-
-.hero {
-	max-width: 130rem;
-	margin: 0 auto;
-	padding: 0 2.7rem;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 6rem;
-	align-items: center;
 }
 
 .heading-primary,
@@ -173,6 +160,7 @@ body {
 	color: #f3faeb;
 	align-self: end;
 	padding: 1.2rem;
+	border-radius: 2rem;
 }
 
 .btn--form:hover,
@@ -208,7 +196,7 @@ body {
 	font-size: 1.8rem;
 	display: flex;
 	align-items: center;
-	gap: 1.6rem;
+	gap: 1.8rem;
 }
 
 .list-icon {
@@ -228,7 +216,6 @@ body {
 
 .hero-img {
 	width: 100%;
-	margin-left: 9.5rem;
 }
 
 /* HELPER CLASSES */
