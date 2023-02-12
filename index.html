@@ -3,7 +3,15 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="description"
+			content="Omnifood is an AI-powered premium food delivery service with the mission to bring affordable and healty meals to as many people as possible, as efficiently as possible."
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" href="img/favicon.png" />
+		<link rel="apple-touch-icon" href="img/favicon-copy.png" />
+		<link rel="manifest" href="manifest.webmanifest" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/general.css" />
 		<link rel="stylesheet" href="css/queries.css" />
@@ -18,25 +26,34 @@
 		></script>
 
 		<script
+			defer
+			src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+		></script>
+
+		<script
 			src="https://kit.fontawesome.com/29b198df20.js"
 			crossorigin="anonymous"
 		></script>
-		<title>OmniFoods</title>
+
+		<script defer src="script.js"></script>
+		<title>Omnifood: Ai-Powered Diet Solutions</title>
 	</head>
 
 	<body>
-		<header class="header">
+		<header class="header sticky">
 			<a href="#">
 				<img src="img/omnifood-logo.png" alt="omnifood-logo" class="logo" />
 			</a>
 			<nav class="main-nav">
 				<ul class="main-nav-list">
-					<li><a href="#" class="main-nav-item">Testimonials</a></li>
-					<li><a href="#" class="main-nav-item">How it works</a></li>
-					<li><a href="#" class="main-nav-item">Meals</a></li>
-					<li><a href="#" class="main-nav-item">Pricing</a></li>
-					<li><a href="#" class="main-nav-item">About us</a></li>
-					<li><a href="#" class="main-nav-item nav-cta">Contact us!</a></li>
+					<li>
+						<a href="#testimonials" class="main-nav-item">Testimonials</a>
+					</li>
+					<li><a href="#hiw" class="main-nav-item">How it works</a></li>
+					<li><a href="#meals" class="main-nav-item">Meals</a></li>
+					<li><a href="#pricing" class="main-nav-item">Pricing</a></li>
+					<li><a href="#about" class="main-nav-item">About</a></li>
+					<li><a href="#cta" class="main-nav-item nav-cta">Contact us</a></li>
 				</ul>
 			</nav>
 
@@ -57,7 +74,7 @@
 							eat healthy again. Tailored to your personal tastes and
 							nutritional needs. We have delivered 250,000+ meals last year!
 						</p>
-						<a href="#" class="btn btn--full margin-right-sm"
+						<a href="#cta" class="btn btn--full margin-right-sm"
 							>Build your perfect diet &darr;</a
 						>
 						<div class="section-featured container">
@@ -73,11 +90,16 @@
 					</div>
 
 					<div class="hero-img-box">
-						<img src="img/hero.png" alt="hero" class="hero-img" />
+						<picture>
+							<source srcset="img/hero.webp" type="image/webp" />
+							<source srcset="img/hero-min.png" type="image/png" />
+
+							<img src="img/hero.min.png" alt="hero" class="hero-img" />
+						</picture>
 					</div>
 				</div>
 			</section>
-			<section class="testimonial-section">
+			<section class="testimonial-section" id="testimonials">
 				<div class="testimonial">
 					<div class="testimonial-box">
 						<i class="fas fa-quote-left"></i>
@@ -167,14 +189,14 @@
 								</div>
 							</div>
 							<div class="image">
-								<img src="img/customers/customer-1.jpg" />
+								<img src="img/customers/customer-1.jpg" alt="rebecca" />
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="section-how">
+			<section class="section-how" id="hiw">
 				<!--container-->
 				<div class="container">
 					<!--wrapper-->
@@ -242,7 +264,7 @@
 				</div>
 			</section>
 
-			<section class="section-meals">
+			<section class="section-meals" id="meals">
 				<div class="container center-text">
 					<span class="subheading">Meals</span>
 					<h2 class="heading-secondary">
@@ -363,7 +385,7 @@
 				</div>
 			</section>
 
-			<section class="section-pricing">
+			<section class="section-pricing" id="pricing">
 				<div class="container">
 					<span class="subheading">Pricing</span>
 					<h2 class="heading-secondary">Choose your plan</h2>
@@ -439,7 +461,7 @@
 					<div class="feature">
 						<ion-icon class="feature-icon" name="infinite-outline"></ion-icon>
 
-						<p class="feature-title">Never cook again!</p>
+						<p class="feature-title" id="about">Never cook again!</p>
 						<p class="feature-text">
 							Our subscriptions cover 365 days per year, even including major
 							holidays.
@@ -473,7 +495,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-cta">
+			<section class="section-cta" id="cta">
 				<div class="container">
 					<div class="cta">
 						<div class="cta-text-box">
@@ -487,7 +509,7 @@
 							<!--Parent container and form element-->
 							<!--Form and label elements are INLINE and so will just stack one after another-->
 							<!--INPUT, BUTTON, AND SELECT ELEMENTS DO NOT INHERIT THE FONT FAMILY FROM THE BODY -->
-							<form action="#" class="cta-form">
+							<form name="sign-up" netlify class="cta-form">
 								<!--gives me the label before the box-->
 								<div>
 									<label for="full-name">Full name</label>
@@ -496,6 +518,7 @@
 										id="full-name"
 										type="text"
 										placeholder="John Smith"
+										name="full-name"
 										required
 									/>
 								</div>
@@ -508,6 +531,7 @@
 										id="email"
 										type="email"
 										placeholder="me@example.com"
+										name="email"
 										required
 									/>
 								</div>
@@ -516,7 +540,7 @@
 									<!--linking the label to the select box via id-->
 									<label for="select-where">Where did you hear about us?</label>
 									<!--select is a dropdown box-->
-									<select id="select-where" required>
+									<select id="select-where" name="select-where" required>
 										<!--option is the list of options-->
 										<!--leaving the value empty means we can't select that option-->
 										<option value="">Please Choose one option:</option>
@@ -572,7 +596,8 @@
 					</ul>
 
 					<p class="copyright">
-						Copyright &copy; 2027 by Omnifood, Inc. All Rights Reserved.
+						Copyright &copy; <span class="year">2027</span> by Omnifood, Inc.
+						All Rights Reserved.
 					</p>
 				</div>
 				<div class="address-col">
